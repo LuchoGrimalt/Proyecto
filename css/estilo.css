@@ -1,0 +1,334 @@
+/*
+font-family: 'Orbitron', sans-serif;
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Staatliches', cursive;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../media/techgris.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Rajdhani', sans-serif;
+    position: relative;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    justify-content: flex-end;
+}
+
+h1 {
+    color: #0b3a92;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    display: inline-block;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.eslogan {
+    color: #222224;
+    font-family: 'Staatliches', cursive;
+    display: inline-block;
+    text-align: center;
+}
+
+.buscador {
+    font-family: 'Rajdhani', sans-serif;
+    display: inline-block;
+    color: rgb(150, 145, 145);
+    width: 30%;
+    border: solid grey 1px;
+    border-radius: 3px;
+}
+
+.redes {
+    display: inline-block;
+    justify-content: flex-end;
+}
+
+.redes img {
+    width: 32px;
+    display: inline-block;
+}
+
+.img1 {
+    height: auto;
+    margin-bottom: 0%;
+    width: 100%;
+}
+
+.navegador {
+    position: sticky;
+    top: 5px;
+}
+
+.menu1 {
+    background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
+    background-size: cover;
+    list-style-type: none;
+    text-align: center;
+    margin-top: 0%;
+}
+
+.menu1 li {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    position: relative;
+}
+
+.menu1 li a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu1 li a:hover {
+    color: #0b3a92;
+    background-color: rgb(228, 242, 248);
+}
+
+.centro {
+    width: 98%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 5fr, 1fr;
+    grid-template-areas: "categorias productos productos productos productos productos productos" "recreo recreo recreo recreo recreo recreo recreo";
+}
+
+.categorias {
+    width: 200px;
+    background-color: #0b3a92;
+    margin: 1%;
+    color: whitesmoke;
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 2px;
+    grid-area: categorias;
+}
+
+.productos {
+    display: inline-flex;
+    flex-flow: row wrap;
+    grid-area: productos;
+    text-align: center;
+}
+
+article {
+    background-color: white;
+    margin: 1%;
+    border: solid grey 2px;
+    border-radius: 3%;
+    justify-content: center;
+}
+
+.recreo {
+    grid-area: recreo;
+    display: flex;
+    flex-flow: row-reverse wrap-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin: 50px 60px;
+    padding: 10px;
+}
+
+.direcMapa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formulario {
+    width: 700px;
+    margin: 20px;
+    padding: 10px;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
+    letter-spacing: 2px;
+    color: aliceblue;
+    text-indent: 20px;
+}
+
+.ubicacion {
+    width: 700px;
+    margin: 20px;
+    padding: 10px;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
+    letter-spacing: 2px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+}
+
+.menu1 li:hover .submenu {
+    display: block;
+    text-align: start;
+    font-size: 60%;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
+}
+
+input.enviarForm {
+    text-transform: capitalize;
+}
+
+footer {
+    padding: 10px;
+    display: flex;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer1 {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*Para celulares hasta 480 px*/
+
+@media screen and (max-width: 480px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo {
+        display: none;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .eslogan {
+        font-size: 15px;
+    }
+    .buscador {
+        width: 90%;
+    }
+    .redes {
+        display: none;
+    }
+    .menu1 li {
+        display: block;
+        justify-content: flex-start;
+        padding: 0%;
+        border-bottom-left-radius: solid 1px white;
+        font-size: 15px;
+    }
+    .img1 {
+        height: auto;
+        margin-bottom: 0%;
+    }
+    .centro {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    .categorias {
+        display: none;
+    }
+    .productos {
+        justify-content: space-evenly;
+    }
+    .recreo {
+        display: none;
+        margin: 5px;
+        padding: auto;
+    }
+    footer {
+        display: block;
+    }
+    .footer1 {
+        text-align: center;
+        justify-content: center;
+    }
+    .foter2 {
+        font-size: 10px;
+    }
+}
+
+
+/*Para celulares hasta 960 px*/
+
+@media screen and (max-width: 960px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo {
+        display: none;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .eslogan {
+        font-size: 15px;
+    }
+    .buscador {
+        width: 80%;
+    }
+    .redes {
+        display: none;
+    }
+    .menu1 li {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .img1 {
+        height: auto;
+        margin-bottom: 0%;
+        width: 100%;
+    }
+    .centro {
+        grid-template-columns: 2fr;
+        flex-direction: column;
+    }
+    .categorias {
+        display: none;
+    }
+    .productos {
+        justify-content: space-evenly;
+    }
+    .recreo {
+        width: 90%;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    iframe {
+        width: 480px;
+    }
+    footer {
+        display: block;
+    }
+    .footer1 {
+        text-align: center;
+        justify-content: center;
+    }
+    .foter2 {
+        font-size: 10px;
+    }
+}
