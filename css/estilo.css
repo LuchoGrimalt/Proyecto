@@ -11,9 +11,9 @@ font-family: 'Staatliches', cursive;
 }
 
 body {
-    background-image: url(../media/techgris.jpg);
+    background-image: url(../media/nintendo.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
     font-family: 'Rajdhani', sans-serif;
     position: relative;
@@ -26,44 +26,52 @@ header {
     align-items: center;
 }
 
+.marca {
+    display: flex;
+    margin: 3px;
+    padding: 3px;
+}
+
 .logo {
     width: 60px;
-    justify-content: flex-end;
+    flex-direction: row;
 }
 
 h1 {
-    color: #0b3a92;
+    color: #ffffff;
     font-family: 'Orbitron', sans-serif;
     font-size: 3rem;
-    display: inline-block;
-    text-align: center;
-    justify-content: flex-start;
+    margin-left: 5px;
+    text-shadow: 0 0 5px rgba(0, 178, 255, 1), 0 0 10px rgba(0, 178, 255, 1), 0 0 20px rgba(0, 178, 255, 1), 0 0 40px rgba(38, 104, 127, 1), 0 0 80px rgba(38, 104, 127, 1), 0 0 90px rgba(38, 104, 127, 1), 0 0 100px rgba(38, 104, 127, 1), 0 0 140px rgba(38, 104, 127, 1), 0 0 180px rgba(38, 104, 127, 1);
 }
 
 .eslogan {
-    color: #222224;
+    color: whitesmoke;
     font-family: 'Staatliches', cursive;
     display: inline-block;
     text-align: center;
+    letter-spacing: 2px;
 }
 
 .buscador {
     font-family: 'Rajdhani', sans-serif;
     display: inline-block;
-    color: rgb(150, 145, 145);
+    color: whitesmoke;
     width: 30%;
-    border: solid grey 1px;
+    border: solid whitesmoke 1px;
     border-radius: 3px;
 }
 
 .redes {
-    display: inline-block;
-    justify-content: flex-end;
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin-right: 5px;
 }
 
 .redes img {
     width: 32px;
-    display: inline-block;
+    flex-direction: row;
+    margin-right: 5px;
 }
 
 .img1 {
@@ -101,53 +109,100 @@ h1 {
 
 .menu1 li a:hover {
     color: #0b3a92;
-    background-color: rgb(228, 242, 248);
+    background-color: rgb(205, 205, 243);
 }
 
 .centro {
-    width: 98%;
+    width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: 5fr, 1fr;
-    grid-template-areas: "categorias productos productos productos productos productos productos" "recreo recreo recreo recreo recreo recreo recreo";
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: "categorias productos productos productos productos productos" "categorias productos productos productos productos productos" "recreo recreo recreo recreo recreo recreo";
 }
 
 .categorias {
     width: 200px;
-    background-color: #0b3a92;
-    margin: 1%;
+    background-color: #2758b3;
+    margin: 10px;
+    padding: 10px;
     color: whitesmoke;
     text-transform: capitalize;
-    text-align: center;
+    text-align: left;
     letter-spacing: 2px;
     grid-area: categorias;
 }
 
-.productos {
-    display: inline-flex;
-    flex-flow: row wrap;
-    grid-area: productos;
-    text-align: center;
+.categorias ul li:hover {
+    color: rgb(152, 189, 224);
+    font-size: 105%;
 }
 
-article {
+.articulos {
+    margin: 10px;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    grid-area: productos;
+}
+
+.articulos div {
     background-color: white;
-    margin: 1%;
+    margin: 10px;
     border: solid grey 2px;
     border-radius: 3%;
-    justify-content: center;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.articulos div:hover {
+    transform: scale(1.02, 1.02);
+}
+
+.catgamer:hover {
+    background-color: rgb(146, 40, 150);
+    color: whitesmoke;
 }
 
 .recreo {
+    background-color: whitesmoke;
+    justify-items: center;
     grid-area: recreo;
-    display: flex;
-    flex-flow: row-reverse wrap-reverse;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    margin: 50px 60px;
+}
+
+.recreo__titulo {
+    display: block;
+    width: 100%;
+    color: whitesmoke;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #0019fdcc 74%);
     padding: 10px;
+}
+
+.recreo div {
+    display: inline-block;
+    justify-content: center;
+    margin: 10px;
+}
+
+.consejo {
+    background-image: radial-gradient(ellipse, black, rgb(83, 36, 36), red);
+    margin: 10px;
+    display: block;
+    color: whitesmoke;
+    padding: 10px;
+    justify-content: center;
+}
+
+.consejo img {
+    flex-direction: row;
+}
+
+.consejo h2 {
+    flex-direction: column;
+}
+
+.consejo p {
+    flex-direction: column;
 }
 
 .direcMapa {
@@ -186,7 +241,7 @@ article {
     display: block;
     text-align: start;
     font-size: 60%;
-    background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
+    background-image: linear-gradient(315deg, #2a2a72 0%, #0019fdcc 74%);
 }
 
 input.enviarForm {
@@ -196,14 +251,21 @@ input.enviarForm {
 footer {
     padding: 10px;
     display: flex;
-    background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
+    background-image: linear-gradient(315deg, #2a2a72 0%, #0019fdcc 74%);
     flex-direction: row;
+    align-items: center;
+    text-align: center;
     justify-content: space-around;
 }
 
-.footer1 {
+.footer__marca {
     flex-direction: column;
     align-items: center;
+}
+
+.dire {
+    font-size: large;
+    color: whitesmoke;
 }
 
 
