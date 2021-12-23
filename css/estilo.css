@@ -117,8 +117,8 @@ h1 {
     height: auto;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 2fr 1fr;
-    grid-template-areas: "categorias productos productos productos productos productos" "categorias productos productos productos productos productos" "recreo recreo recreo recreo recreo recreo";
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "categorias articulos articulos articulos articulos articulos" "categorias articulos articulos articulos articulos articulos" "separador separador separador separador separador separador" "recreo recreo recreo recreo recreo recreo";
 }
 
 .categorias {
@@ -133,6 +133,10 @@ h1 {
     grid-area: categorias;
 }
 
+.categorias ul li {
+    list-style: none;
+}
+
 .categorias ul li:hover {
     color: rgb(152, 189, 224);
     font-size: 105%;
@@ -141,9 +145,9 @@ h1 {
 .articulos {
     margin: 10px;
     display: inline-flex;
-    flex-flow: row wrap;
-    justify-content: stretch;
-    grid-area: productos;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    grid-area: articulos;
 }
 
 .articulos div {
@@ -164,24 +168,40 @@ h1 {
     color: whitesmoke;
 }
 
-.recreo {
-    background-color: whitesmoke;
-    justify-items: center;
-    grid-area: recreo;
-}
-
-.recreo__titulo {
-    display: block;
-    width: 100%;
+.separador {
+    height: fit-content;
     color: whitesmoke;
     background-image: linear-gradient(315deg, #2a2a72 0%, #0019fdcc 74%);
-    padding: 10px;
+    padding: 20px;
+    text-align: center;
+    grid-area: separador;
 }
 
-.recreo div {
-    display: inline-block;
-    justify-content: center;
-    margin: 10px;
+.recreo {
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.recreo__uno {
+    margin: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.recreo__dos {
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.recreo p {
+    text-align: center;
+    padding: 10px;
 }
 
 .consejo {
@@ -207,29 +227,35 @@ h1 {
 
 .direcMapa {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .formulario {
-    width: 700px;
-    margin: 20px;
-    padding: 10px;
+    width: 550px;
+    height: 550px;
+    margin: 10px;
+    padding: 6px;
     background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
     letter-spacing: 2px;
     color: aliceblue;
-    text-indent: 20px;
+    text-indent: 10px;
 }
 
 .ubicacion {
-    width: 700px;
-    margin: 20px;
-    padding: 10px;
+    width: 550px;
+    height: 550px;
+    margin: 10px;
+    padding: 3ppx;
     background-image: linear-gradient(315deg, #2a2a72 0%, #00a0fdcc 74%);
     letter-spacing: 2px;
     color: aliceblue;
     text-align: center;
+}
+
+.ubicacion li {
+    list-style: none;
 }
 
 .submenu {
@@ -248,8 +274,13 @@ input.enviarForm {
     text-transform: capitalize;
 }
 
+.dire {
+    font-size: large;
+    color: whitesmoke;
+}
+
 footer {
-    padding: 10px;
+    width: 100%;
     display: flex;
     background-image: linear-gradient(315deg, #2a2a72 0%, #0019fdcc 74%);
     flex-direction: row;
@@ -263,15 +294,10 @@ footer {
     align-items: center;
 }
 
-.dire {
-    font-size: large;
-    color: whitesmoke;
-}
 
+/*Para celulares hasta 600 px*/
 
-/*Para celulares hasta 480 px*/
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
     header {
         display: flex;
         flex-direction: column;
@@ -305,83 +331,21 @@ footer {
         margin-bottom: 0%;
     }
     .centro {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-    }
-    .categorias {
-        display: none;
-    }
-    .productos {
-        justify-content: space-evenly;
-    }
-    .recreo {
-        display: none;
-        margin: 5px;
-        padding: auto;
-    }
-    footer {
-        display: block;
-    }
-    .footer1 {
-        text-align: center;
-        justify-content: center;
-    }
-    .foter2 {
-        font-size: 10px;
-    }
-}
-
-
-/*Para celulares hasta 960 px*/
-
-@media screen and (max-width: 960px) {
-    header {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .logo {
-        display: none;
-    }
-    h1 {
-        font-size: 30px;
-    }
-    .eslogan {
-        font-size: 15px;
-    }
-    .buscador {
-        width: 80%;
-    }
-    .redes {
-        display: none;
-    }
-    .menu1 li {
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-    .img1 {
-        height: auto;
-        margin-bottom: 0%;
-        width: 100%;
-    }
-    .centro {
-        grid-template-columns: 2fr;
-        flex-direction: column;
+        flex-flow: row wrap;
     }
     .categorias {
         display: none;
     }
-    .productos {
+    .articulos {
+        flex-flow: row wrap;
         justify-content: space-evenly;
     }
-    .recreo {
-        width: 90%;
+    .recreo div {
         flex-direction: column;
-        justify-content: flex-start;
     }
-    iframe {
-        width: 480px;
+    .direcMapa {
+        flex-direction: column;
     }
     footer {
         display: block;
